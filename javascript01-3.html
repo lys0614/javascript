@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자바스크립트 1일차 3번파일 - 연산자</title>
+    <script>
+    // 자바 스크립트 연산자
+        //프로그래밍 언어에서 각종 데이터를 연산하기 위한 기호
+        //기본적으로 연산자는 왼쪽에서 오른쪽으로 이동하며 연산함
+
+        // 산술 연산자
+            // 사칙연산 연산자, 나머지 연산자
+            // +,-,*,/ : a항과 b항의 값을 더하고,빼고,곱하고,나눈값의몫을구하는 연산자들
+            // % : a항과 b항을 나눈 후의 나머지를 구하는 연산자
+        var a=3;
+        var b=10;
+        var c;
+        c=a+b;
+        console.log("a+b="+c);
+        c= a-b;
+        console.log("a-b="+c);
+        c=a*b;
+        console.log("a*b="+c);
+        c=a/b;
+        console.log("a/b="+c);
+        c=a%b;
+        console.log("a/b의 나머지="+c);
+        
+        // 할당 연산자, 대입 연산자
+            // 값을 변수에 할당하는 연산자
+            // 연산 방향이 다른연산자와는 달리 오른쪽에서 왼쪽으로 진행
+            // 연산의 우선순위가 가장 느림
+            // 산술 연산자와 함께 사용가능함
+            // = : 값을 오른쪽에서 왼쪽의 변수에 할당함
+            // += : 산술 연산자의 + 와 합해서 B = B + A 와 같은 의미
+                //B += A; 와 B = B+A; 는 같은 의미임
+            // -=, *=, /=, %= 모든 산술 연산자와 응용가능
+        var a = 10; //변수 a에 10 대입
+        console.log(a);
+
+        a= a+10;//변수 a랑 10을 더한 값을 a에 대입
+        console.log(a);
+
+        a+=10; // 변수 a에 10을 더한 값을 a에 대입
+        console.log(a);
+
+        //문제1) 대입연산자와 산술연산자를 사용하여 사칙연산을하는 프로그램을 작성하세요
+        // 두개의 숫자를 연산하는 프로그램 작성
+        // 숫자는 아무거나
+        // 변수는 각 연산자별로 5개씩 선언
+        var num1 = 10;
+        var num2 = 20;
+        var A; var B; var C; var D; var E;
+        
+        A = num1+num2;
+        console.log("num1+num2 : "+A);
+        B = num1 - num2;
+        console.log("num1-num2 : "+B);
+        C = num1 * num2;
+        console.log("num1 * num2 : "+C);
+        D = num1 / num2;
+        console.log("num1 / num2 : "+D);
+        E = num1 % num2;
+        console.log("num1 % num2 : "+E);
+        A = num1+=num2;
+        console.log("num1 + num2 를 +=기호로 한번 해보면? = "+A);
+
+        // 비교 연산자
+            //논리문 및 변수 혹은 값 사이에서 동등성 혹은 차이를 판별하는데 사용하는 연산자
+            //연산결과는 참과 거짓으로 출력됨
+            // > : 좌항이 우항보다 크다
+            // < : 좌항이 우항보다 작다
+            // >= : 좌항이 우항보다 크거나 같다
+            // <= : 좌항이 우항보다 작거나 같다
+            // == : 좌항과 우항이 같다
+            // != : 좌항과 우항이 같지 않다
+            // === : 좌항과 우항은 같다(데이터 타입까지 비교)
+            // !== : 좌항과 우항은 같지 않다(데이터 타입까지 비교)
+
+        var x= 10;
+        var y="10";
+        console.log(x > 10);
+        console.log(x < 10);
+        console.log(x >= 10);
+        console.log(x <= 10);
+        console.log(x == 10);
+        console.log(x != 10);
+        //자바 스크립트는 문법이 간결한 형식을 사용하고 있으며 데이터 타입 비교도 간결한 형태를 띄고 있기 때문에 숫자형 10과 문자열형 10을 동일한 값으로 판단함.
+        console.log(x == y);// true가 뜸
+        console.log(x != y);// false가 뜸
+        
+        console.log(x === y);// 엄격한 비교로 인하여 값의 데이터 타입까지 비교하기에 false가 뜸
+        console.log(x !== y);
+        
+        // 논리 연산자
+        // 변수 또는 값 사이의 논리 형태를 결정하는데 사용하는 연산자
+        // 주로 연산식을 2개 이상 사용해야할 경우 사용함
+        // 결과값은 true or false 임
+        // 연산 수행도 true or false 로 수행함
+        // &&(and연산자) : 논리곱 연산을 수행함 -> 둘다 참이어야 true가 뜸
+        // ||(or연산자) : 논리합 연산을 수행함 -> 둘중에 하나만 참이어도 true가 뜸
+        // !(not연산자) : 논리부정 연산을 수행함 -> 연산값을 반대로 출력함 (연산값 true -> false출력 / 연산값 false -> true 출력)
+        var x = 10;
+        var y = 5;
+        console.log(x < 10 && y > 1);
+        console.log(x < 10 || y > 1);
+        console.log(!(x == y));
+
+
+        // 비트 연산자
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

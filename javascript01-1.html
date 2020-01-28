@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript 1일차 1번파일 - 기본개념</title>
+    <!-- 자바 스크립트
+        WEB의 기본 프로그래밍 언어 / 스크립트 언어.
+        html을 실시간으로 생성, 수정, 삭제할 수 있음.
+        CSS를 실시간으로 생성, 수정, 삭제 및 적용 할 수 있음.
+        자바 스크립트는 web의 이벤트를 이용하여 동적인 웹 페이지를 만들 수 있음.
+        -->
+    <!-- 자바스크립트 사용법
+        inline방식 -> html 태그에 직접 자바스크립트 코드를 입력하는 방식
+        웹 페이지에 <script>태그를 통해 자바스크립트 코드를 입력하는 방식 
+            주로 <head>태그 내에 <script>태그를 입력 후 사용함 
+                <body태그 내에서 해도 되긴함, 보통 바디태그 가장 아래에 입력
+                <head>태그에 쓰는게 가장 선호되는 타입.
+        외부 자바스크립트 파일 로드 방식
+            <script src="파일 경로"></script> 형태로 사용됨
+            가장 많이 사용되는 방식
+            디자인과 프로그래밍을 분리해서 관리할수 있음
+            하나의 파일로 여러개의 html파일에 적용이 가능함 = 재활용 가능
+            외부 파일 방식은 외부 서버에 존재하는 자바 스크립트 파일을 로드 할 수 있음.
+        
+        자바 스크립트도 html코드 처럼 위에서 아래 순서대로 한줄씩 실행하는 형태.
+
+        자바스크립트는 오류가 발생하면 더 이상 실행하지 않음
+            오류가 발생한 지점에서 실행을 멈춤
+
+        자바스크립트를 화면에 출력하기
+            innerHTMl 사용
+                사용 빈도 높음
+                기존의 화면을 바꾸기 위해 사용한 html 태그의 내용을 수정하기 위해서 사용함
+            document.write 사용
+                낮음
+                기존의 화면이 모두 로딩 된 후 사용하면 기존의 html 내용이 삭제됨
+            alert()사용
+                사용 빈도 높음
+
+            console.write 사용
+         -->    사용 빈도 높음
+    <!-- <script>
+        alert("head 태그에 입력한 자바 스크립트");
+    </script> -->
+    <script src="javascript01.js"></script>
+    <!-- html외부에서 javascript 파일을 불러옴. -->
+</head>
+<body>
+    <h2>첫번째 자바스크립트 프로그래밍</h2> 
+
+    <button type="button" onclick="document.getElementById('time').innerHTML = Date();">클릭 시 현재 시간 출력</button>
+    <!-- onclick 이벤트를 버튼에 적용시킨 것 -->
+    <!-- onclick 이벤트는 클릭했을 시 발생하는 이벤트를 선언함. -->
+    <!-- getElementByid('') -> '' 라는 아이디를 가진 태그에 적용시키겠다는 말. -->
+    <br><br>
+    <button type="button" onclick="alert('abcdefg');">클릭</button>
+    <br><br>
+    <button oncontextmenu="alert('하라는대로 하네 ㅋㅋㅋ');">우클릭</button>
+    <p id="time">  </p>
+    <br><hr><br>
+    <!-- html을 실시간으로 수정 시키는 자바스크립트 -->
+    <button onclick="document.getElementById('css').style.fontSize='35px';">클릭시 css 변경</button>
+    <!-- 버튼 클릭 시 css라는 아이디를 가진 태그에 style 태그를 적용시킴. -->
+    <p id="css">버튼 클릭시 폰트 크기가 변경될 글자.</p>
+    <button onclick="document.getElementById('css').style.display='none';">클릭시 글자 숨김</button>
+    <!-- 버튼 클릭 시 css라는 아이디를 가진 태그에 display="none" 속성을 적용시킴 -->
+    <button onclick="document.getElementById('css').style.display='block';">클릭 시 display="block"; 속성 적용</button>
+    <!-- 버튼 클릭 시 css라는 아이디를 가진 태그에 display="block" 속성을 적용시킴 -->
+    <br><hr><br>
+    <img id="img" src="../images/006.jpg" alt="">
+    <button onclick="document.getElementById('img').src='../images/prod1.jpg';">클릭시 이미지 로드</button>
+    <button onclick="document.getElementById('img').src='../images/prod3.gif';">클릭시 이미지2 로드</button>
+
+    <br><hr><br>
+
+    <h2>document.write 사용해 화면에 촐력</h2>
+    <button onclick="document.write('기존 내용 삭제 후 출력');"></button>
+</body>
+</html>
