@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript 2일차 1번 - </title>
+
+    <script>
+    // 데이터 타입
+        // 자바스크립트에서 사용되는 데이터의 유형
+        // 숫자형, 문자열형, 논리형, 배열, 객체형, null, undefined
+        // 숫자형 : 일반적인 숫자
+            //숫자형 최대값 : 9007199254740991 배정밀도 64비트 형식의 크기
+            //정수와 실수를 연산 시 실수로 변환하여 연산진행
+            //숫자형과 문자열형을 연산 시 문자열형으로 변환하여 연산
+            var x = Number.MAX_VALUE;
+            var y = Number.MIN_VALUE;
+            console.log("최대값 : "+x+" , "+ "최소값 : "+y);
+
+            var a = 3.14;
+            var b =3;
+            console.log(a); console.log(b);
+            //숫자형 데이터는 지수 표기법을 사용할 수 있음
+            //지수 표기법을 사용하지 않을 경우 최대 15자리까지 표시
+            //최대 소수점 자리는 약 17자리
+            a = 123e5;
+            console.log(a);
+            b = 123e-5;
+            console.log(b);
+            //e는 소숫점 위치 옮겨주는 단어
+            a = 0.2 + 0.1;
+            console.log(a);
+            b = (0.2 * 10 + 0.1 * 10)/10;
+            console.log(b);
+            //숫자형과 문자열형의 연산 
+            var a=20;
+            var b="20";
+            console.log("숫자형20 문자형'20' : "+a+b);//20+20 이 아닌 '2020' 문자열로 나옴.
+            //숫자와 문자를 + 연산 시 숫자형이 자동으로 문자열형으로 바뀜
+            a = "10";
+            b = "20";
+            console.log("문자형 '10' 숫자형 '10'"+ a+b);
+            // + 기호는 합연산 연산자일뿐만 아니라 문자열 연결 연산자의 역할도 있음
+            console.log("문자형 '20' 숫자형 '10' - 기호를 쓰면? : "+(b-a));//문자열 형 숫자는 서로 사칙연산이 가능함.
+            console.log("문자형 '20' 숫자형 '10' * 기호를 쓰면? : "+b*a);
+            //자바스크립트는 기본적으로 유연한 규칙을 사용하기 때문에 문자열로 만들어진 숫자를 숫자로 인식함
+            a = "10";
+            b = "3";
+            c = a % b;
+            console.log(c);
+            // + 연산자를 제외한 사칙연사자들은 문자열 형 숫자들을입력해도 산술연산 가능함
+            // NaN(Not a Number) : 자바스크립트에서 해당하는 데이터가 숫자인지 아닌지 확인하는 자바스크립트 예약어
+            // isNaN() : 해당하는 데이터를 숫자인지 아닌지 확인하는 함수
+                //true : 숫자가 아님, false : 숫자
+                a="글자";
+                console.log(isNaN(a));//true
+                b=10;
+                console.log(isNaN(b));//false
+                c="100";
+                console.log(isNaN(c)); // c는 문자열 형의 숫자이기 때문에 자바스크립트에선 숫자로 인식해줄 수 있음. 그래서 숫자로 판단해줌.
+            //Infinity
+            //자바스크립트에서 출력 가능한 가장 큰 숫자 이외의 숫자를 계산시 출력하는 값
+
+            var num = 2;
+            var text = "";
+
+            while ( num != Infinity){
+                num = num * num;
+                text = text + num + "\n";
+            }
+            console.log(text);
+            //16진수 표시
+            //자바스크립트에서 숫자 앞에 0x 가 붙어 있을 경우 16진수 임
+            var x = 0xFF;
+            var y = 255;
+            console.log(x == y);
+            console.log("----문자열함수----")
+        // 문자열형 : 일반적인 문자나 문자열
+           // "" 혹은 ''로 감싸여 진 모든 문자열
+           //length() : 문자열 길이를 출력하는 함수
+           var a = "ABDCEFEFEFEFEFWQEQRADAF";
+           var b = "ADQEQWPKLPSAFAISHFHG";
+           var c =a + b;
+           console.log(c.length);
+           //indexOf(문자) : 해당문자열에서 지정한 문자의 위치를 출력
+               //앞에서 부터 숫자를 카운트하며, 지정한 문자가 처음 발견되는 위치를 알려줌
+               //0에서부터 시작
+               var txt = "qqqqqzqqqqqqwqqqqqqqqqdqqqqqqqs";
+               var num = txt.indexOf("w");
+               console.log("g의 위치는 : "+num);
+            //문제2)
+                var q1 = "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려강산 대한사람 대한으로길이 보전하세";
+                var qnum = q1.indexOf("하느님");
+                console.log("위치는 : "+qnum+"번째");
+            //만약에 indexOf 함수가 찾는 문자가 없을 경우 -1이 출력됨
+
+            //lastIndexOf() : 해당 문자열에서 지정한 문자의 위치를 뒤에서부터 카운트하여 출력
+            //찾는 문자가 없을경우 -1 출력
+            var index = q1.indexOf("대한");
+            var lastIndex = q1.lastIndexOf("대한");
+            console.log("indexOf로 찾은 위치 : "+index);
+            console.log("lastIndexOf로 찾은 위치 : "+lastIndex);
+
+            //slice(start, end) : 문자열의 일부분을 출력
+            //해당문자열에서 start 위치에서 end 위치까지의 문자열을 출력함
+            //end 위치의 문자를 포함하지 않음
+            //음수를 입력하면 뒤에서부터 카운트
+            //매개변수를 1개만 입력하면 start부분에서 문자열의 끝까지 잘라냄
+            var str = "apple, banana, kiwi";
+            var res = str.slice(7,13);
+            console.log("원본 문자열 : " + str);
+            console.log("잘라낸 문자열 : " + res);
+
+            res = str.slice(-12,-6);
+            console.log("원본 문자열 : " + str);
+            console.log("음수를 입력해서 잘라낸 문자열 : " + res);
+
+            //substring(start, end):문자열의 일부분을 출력
+            //해당문자열에서 start 위치에서 end 위치까지의 문자열을 출력함
+            //음수값을 사용할수 없음
+            //end 위치의 문자는 포함안함
+            var str = "apple, banana, kiwi";
+            var res = str.substring(7, 13);
+            console.log("원본 문자열 : " + str);
+            console.log("substring으로 잘라낸 문자열 : " + res);
+            var res = str.substring(7);
+            console.log("substring에서 매개변수를 1개만 지정해서 잘라낸 문자열 : " + res);
+
+            //substr(start, length):문자열의 일부분을 출력
+            //start 지점에서 length 만큼의 문자를 출력
+            var str = "apple, banana, kiwi";
+            var res = str.substr(7,7);
+            console.log("substr로 뽑아온 글자 : "+res);
+            var res = str.substr(7);
+            console.log("substr에서 매개변수 1개입력 해서 나온거 : "+res);
+            var res = str.substr(-4);
+            console.log("substr에서 음수 입력해서 뽑은 거 : "+res);
+
+            //replace(원본문자, 변경문자):지정한 문자열로 변경
+            //해당 문자열에서 문자를 검색 후 지정한 문자로 변경
+            //문자열의 처음부터 검색하여 발견되는 첫번째 문자를 변경
+            var str="asdfqwerzxcv";
+            var res=str.replace("qwer", "ASDF");
+            console.log("어떰 : "+res)
+
+            //trim() : 문자열의 공백을 제거
+            var str = "    hello world!             ";
+            var strlength = str.length;
+            console.log("공백 안제거한 문자열 : "+str);
+            console.log("공백 안제거한 문자 길이 : "+strlength);
+            var res=str.trim();
+            var reslength = res.length;
+            console.log("공백 제거한 문자 (trim 사용): "+res);
+            console.log("공백 제거한 문자 길이 : "+reslength);
+
+            //split(분할문자) : 문자열을 배열로 변환
+            //문자열을 지정한 문자를 기준으로 문자열을 잘라서 배열로 만듦
+            var txt = "a,b,c,d,e,f";
+            var array = txt.split(",");
+            console.log("원본 문자열 : "+txt);
+            console.log("split 적용 후 배열 0번 index : "+array[0]);
+            console.log("split 적용 후 배열 1번 index : "+array[1]);
+            console.log("split 적용 후 배열 2번 index : "+array[2]);
+            console.log("split 적용 후 배열 3번 index : "+array[3]);
+            console.log("split 적용 후 배열 4번 index : "+array[4]);
+            console.log("split 적용 후 배열 5번 index : "+array[5]);
+            console.log("split 적용 후 배열 전체 index : ", array);
+
+        // 논리형(boolean) : 논리적으로 참 혹은 거짓 판단하는 타입 - true or false
+        //다른 데이터 타입의 값을 논리형으로 표현하는 방식
+            //true : 숫자형 1 이상의 값, 문자열형에서 데이터가 있는상태, 
+            //false : 숫자형 0 이하의 값, 문자열 "" 혹은 '' - 공백문자조차 없는 문자열, null, undefined, NaN
+            //Boolean(값 및 조건식) : 해당 값 혹은 조건식이 참인지 거짓인지 확인
+            var bool = Boolean(10 > 5);
+            console.log(bool);
+
+            var result = 1;
+            console.log("숫자형 1은 논리형으로 : "+Boolean(result));
+            var result = 0;
+            console.log("숫자형 0은 논리형으로 : "+Boolean(result));
+            var result = 0.1;
+            console.log("숫자형 실수 0.1은 논리형으로 : "+Boolean(result));
+            var result = -0.1;
+            console.log("숫자형 실수 -0.1은 논리형으로 : "+Boolean(result));
+            var result = "문자";
+            console.log("문자열형은 논리형으로 : "+Boolean(result));
+            var result = "";
+            console.log("공백은 논리형으로 : "+Boolean(result));
+            var result = null;
+            console.log("null은 논리형으로 : "+Boolean(result));
+            var result = undefined;
+            console.log("undefined 는 논리형으로 : "+Boolean(result))
+            var result = NaN;
+            console.log("NaN 는 논리형으로 : "+Boolean(result))
+        // 배열 : 변수와 형태가 비슷하지만 하나의 변수명으로 여러개의 데이터를 저장하는 타입(index번호가 존재)
+        // 객체형 : 배열과 비슷한 형태로 하나의 변수명으로 여러개의 데이터를 저장하는 타입(key와 value가 존재)
+        // null : 데이터가 존재하지 않는다는 의미의 데이터 타입(한번 이상 사용 후 없는 상태)
+        // undefined : null과 동일한 뜻.(데이터가 처음부터 없는 상태)
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
