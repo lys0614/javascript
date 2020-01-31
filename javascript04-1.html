@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript 4일차 1번</title>
+    <script>
+        // if{} ~ else if{} ~ eles{}
+        // 조건을 여러개 사용하여 결과값이 true가 되는 부분을 실행하는 조건문
+        // 모든 조건을 만족하지 못하면 else문을 실행함
+        // 사용법
+            // if(조건1){ 실행할거 } else if(조건2){ 실행할거 } else{ 실행할거 }
+            // else if 문구가 여러개 있을수도 있음
+
+            var score = 87;
+
+            if(score >= 90){
+                console.log("당신의 점수는 " + score + "점이고 학점은 A");
+            }
+            else if( 80 <= score < 90){
+                console.log("점수는 " + score + "학점은 B");
+            }
+            else if( 70 <= score < 80){
+                console.log("점수는 " + score + "학점은 C");
+            }
+            else if( 60 <= score < 70){
+                console.log("점수는 " + score + "학점은 D");
+            }
+            else{
+                console.log("F다 맨이야");
+            }
+
+            // else를 사용하지 않은 if ~ else if 문
+            // if문과 같은 형식으로 사용하는 if ~ else if 문
+
+            var score=73;
+            var level;
+            if (score > 90){
+                level = 'a';
+                console.log("와!");
+            }
+            else if ( score >= 80){
+                level = 'b';
+                console.log("올");
+            }
+            console.log("흠...");
+        
+        console.log('---------문----------');
+        //문1)사용자의 점수에 따라서 성적을 화면에 출력하는 프로그램 작성
+        // 100~96 A+ / 95~90 A / 89~86 B+ / 85~80 B / 
+        //60점이하는     F
+        var score=86;
+        var lank;
+        if (100>= score && score >= 96){
+            lank = "A+";
+            console.log("니점수 : "+score+" / 학점 : "+lank);
+        }
+        else if (95>= score && score >= 90){
+            lank = "A";
+            console.log("니점수 : "+score+" / 학점 : "+lank);
+        }
+        else if (89>= score && score >= 86){
+            lank = "B+";
+            console.log("니점수 : "+score+" / 학점 : "+lank);
+        }
+        else if (85>= score && score >= 80){
+            lank = "B";
+            console.log("니점수 : "+score+" / 학점 : "+lank);
+        }
+        else{
+            lank = "F";
+            console.log("니점수 : "+score+" / 학점 : "+lank);
+        }
+        //문2)시간에 따라서 인사말이 다르게 출력되는 프로그램을 작성 하세요
+        // 오전 12시전 / 오후 18시전 / 저녁 21시전 / 그이후밤
+        var time= 21;
+        var hi;
+        if ( time < 12){
+            hi = "오전입니다";
+            console.log("지금시간은 : ",time,hi);
+        }
+        else if ( time < 18){
+            hi = "오후입니다";
+            console.log("지금시간은 : ",time,hi);
+        }
+        else if ( time < 21){
+            hi = "저녁입니다";
+            console.log("지금시간은 : ",time,hi);
+        }
+        else if ( 21 <= time ){
+            hi = "밤입니다";
+            console.log("지금시간은 : ",time,hi);
+        }
+        console.log("----------------");
+    // switch ~ case 조건문
+    // if문은 기본적으로 범위를 설정하여 조건을 확인함
+    // switch ~ case 문은 조건식에 들어가는 값이 정해져있을 경우에 사용
+    // default - if문에서 else와 같은 기능, switch~case 문에 조건식에 해당하는 값이없을 경우 기능함
+    // case 문에 break;가 없으면 프로그램을 실행 후 종료하지 않고 계속 진행하기 때문에 조건에 충족하지 않아도 break;를 만날때 까지 코드블럭 끝까지 실행해 버림
+    // 모든 switch ~ case 문은 if ~ else if ~ else 문으로 변환이 가능함
+    // // 사용법
+        //     switch(조건식){
+        //         case 조건식에 해당하는 값: ;
+        //         실행할 코드;
+        //         break;
+        //         
+        //      ...
+        // default : 실행할 코드 break;
+        // }
+    console.log("switch~case 문을 if~else if~else 문으로 변환")
+    var day = new Date().getDay();//현재시간을 기준으로 요일을 숫자로 표기해주는 함수
+    if (day == 0){
+        console.log("월");
+    }
+    else if (day == 1){
+        console.log("화");
+    }
+    else if (day == 2){
+        console.log("수");
+    }
+    else if (day == 3){
+        console.log("목");
+    }
+    else if (day == 4){
+        console.log("금");
+    }
+    else{
+        console.log("주말");
+    }
+
+    // 조건문은 다른 조건문과 겹쳐서 사용할수 있음
+    // if(조건식){
+    //     if(조건식2){
+
+    //     }
+    // }
+    console.log("======문3======");
+
+    // 문3) 점심시간에 중화요리 집에가서 먹을 음식을 선택하는 프로그램작성
+    // 첫번째 if -> else if 문을 사용하여 음식 3가지중 하나 선택, else문 사용 필수,
+    // 2번째 if -> 사이드 메뉴 주문 여부 확인
+    // 마지막에 주문 목록을 화면에 출력
+    var food;
+    var side=false;
+    var sideon;
+    if(food=="짜장면"){
+        console.log("난 짜장면");
+    }
+    else if(food=="짬뽕"){
+        console.log("난 짬뽕");
+    }
+    else if(food=="볶음밥"){
+        console.log("난 볶음밥");
+    }
+    else{
+        console.log("안먹어?");
+        food="";
+    }
+    if (food != null && side == true){
+        console.log("군만두도 먹는다");
+        sideon="군만두";
+    }
+    else{
+        console.log("군만두는 안먹는다");
+        sideon="";
+    }
+    console.log("주문한 메뉴 : "+food+","+sideon);
+    
+    // 문4) 문3을 중복if문을 사용하여 if문 한번에 사이드와 주메뉴를 출력하는 프로그램 만들기
+    console.log("=========문4=========");
+    var food1;
+    var side1;
+    var sideon1;
+    if(food1 !=null){
+        console.log("난 "+food1);
+        if(side1 == true){
+            sideon1 = "군만두";
+        }else{
+            console.log("군만두는 안먹는다");
+            sideon1="";
+        }
+    }else{
+        food1="";
+        sideon1="";
+        console.log("안먹는다");
+    }
+    console.log("주문한 메뉴 : " +food1+" , "+sideon1);
+
+    // 문5)성적표 출력
+    // 다중 if문을 사용해서 성적표 출력
+    console.log("---------문5----------");
+    //사용자의 입력을 받는 자바스크립트 함수 prompt() 를 사용
+        //입력받은 데이터는 문자열로 치환
+        //숫자로 사용하려면 변환 해줘야함(Number(), parseInt(), parseFloat() -> 문자열형을 숫자형으로 변환하는 함수);
+    var score1 = prompt("점수를 입력하세요");
+    score1 = Number(score1);
+    var rank1;
+
+    if(score1 > 100){
+        console.log("다시입력하셈");
+            rank1 = "";
+    }
+
+    if (score1 <= 100 && score1 >= 90){
+        if(score1 <= 100 && score1 >= 95){
+            rank1 = "A+";
+            console.log("학점 : "+rank1);
+        }
+        else{
+            rank1 = "A";
+            console.log("학점 : "+rank1);
+        }
+    }
+
+    else if (score1 <= 89 &&score1 >= 80){
+        if(score1 <= 89 &&score1 >= 85){
+            rank1 = "B+";
+            console.log("학점 : "+rank1);
+        }
+        else{
+            rank1 = "B";
+            console.log("학점 : "+rank1);
+        }
+    }
+
+    else if (score1 <= 79 &&score1 >= 70){
+        if(score1 <= 79 &&score1 >= 75){
+            rank1 = "C+";
+            console.log("학점 : "+rank1);
+        }
+        else{
+            rank1 = "C";
+            console.log("학점 : "+rank1);
+        } 
+    }   
+
+    else if (score1 <= 69 &&score1 >= 60){
+        if(score1 <= 69 &&score1 >= 65){
+            rank1 = "D+";
+            console.log("학점 : "+rank1);
+        }
+        else{
+            rank1 = "D";
+            console.log("학점 : "+rank1);
+        }
+    }
+
+    else if (score1 <60){
+        rank1 = "F";
+        console.log("학점 : "+rank1);
+    }
+
+    else{
+        rank1 = "";
+    }
+
+    
+    
+    </script>
+</head>
+<body>
+
+</body>
+</html>
