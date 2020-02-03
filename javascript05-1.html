@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript 5일차 1번</title>
+
+    <script>
+    // 반복문
+    // 배열과 반복문
+    // 배열의 모든 내용을 출력할 때 많이 사용함
+
+    var numbers = [1,2,3,4,5,6];
+
+    //반복문을 사용하여 배열의 모든 데이터 출력
+    //배열의 크기를 직접 지정한 방식
+    //배열의 크기가 바뀌면 조건문을 수정해야함
+    for(var i=0; i<=5; i++){
+        console.log("반복문을 이용한 배열 데이터 출력 : ",numbers[i]);
+    }
+    console.log("\n");
+    console.log("조건문에 배열의 길이를 넣는 방법");
+    //조건절에 배열의 길이값을 넣는방법 배열의 크기가 변경되어도 조건문 수정안해도 됨
+    for(var i=0; i<numbers.length; i++){
+        console.log("반복문을 이용한 배열 데이터 출력 : ",numbers[i]);
+    }
+
+    // 문1) 배열 arrNumbers를 선언하고, 데이터를 1~10까지 저장시키고 모든 index의 데이터를 더하여 화면에 출력하는 프로그램을 작성하시오
+    var arrNumbers = [1,2,3,4,5,6,7,8,9,10];
+    var q1=0;
+    var q2 = 0;
+    for(var i=0; i < arrNumbers.length; i++){
+        q1 += arrNumbers[i];
+    }
+    console.log("배열 arrNunmbers 내의 모든 데이터를 합한 값 : "+q1);
+    console.log("==========");
+
+    //문2) 문1을 while문으로
+
+    var arrq2=[10,9,8,7,6,5,4,3,2,1];
+    var q2=0;
+    var i=0;
+    while(i<arrq2.length){
+        q2 += arrq2[i];
+        console.log("배열 합한값 : ",q2);
+        i++;
+    }
+    console.log(q2);
+
+    //이중 for문
+    //for문 내에 for문을 사용하는 방식
+    //2중 배열의 내용을 모두 출력할떄 많이 사용함
+
+
+    // 문제3 ) for문을 사용하여 배열에 원하는 단수의 구구단을 저장하고 화면에 출력하는 프로그램을 작성하시오
+    var gugudan = [];
+    var q3 = 0;
+    var q31 = 0;
+    var q32 = 0;
+    var gugudani = [];
+    var gugudanb = [];
+    for(i=0;i<10;i++){
+        
+        for(j=0;j<10;j++){
+            q3 = i;
+            q31 = j;
+            q32 = q3 * q31
+            gugudan[j]=q32;
+        }
+        
+        console.log("구구단 " + i + " 단 : "+gugudan);
+    }
+    
+
+    console.log("===============================");
+
+    // 문4)문3을 while문으로 만들기
+
+    var gugudan4 = [];
+    var i = 0;
+    var j = 0;
+    var q4 = 0;
+    var q41 = 0;
+    var q42 = 0;
+    while(i<10){
+        j=0;
+        while(j<10){
+            q42 = i * j;
+            gugudan4[j]=q42;
+            j++;
+        }
+        i++;
+        console.log(gugudan4);
+    }
+    
+
+    //2중for문
+    //for문 안에 for문이 이 있는것
+    //2중배열의 내용을 모두 출력할때 많이 사용함
+    for(var i =0; i<5;i++){
+        for(var j=0;j<5;j++){
+            console.log("i는 : " +i+", j는 : "+j);
+        }
+    }
+
+    //문5)2중for문을 사용하여 구구단을 2단에서 9단까지 모두 출력하기
+    var arrq5 = [];
+    for(var i=2;i<=9;i++){
+        for(var j=1;j<=9;j++){
+            var q5 = i * j;
+            console.log("구구단 "+i+"단 : "+q5);
+        }
+        console.log("\n");
+    }
+
+    //문6)문5를 2중while문을 사용하여 출력하기
+    var i = 2;
+    var j = 1;
+    var q6 = 0;
+    while(i<=9){
+        while(j<=9){
+            q6 = i * j;
+            console.log("구구단 "+i+" 단 : "+q6);
+            j++;
+        }
+        j=1;
+        i++;
+    }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
