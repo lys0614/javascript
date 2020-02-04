@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript 6일차 1번파일</title>
+    <script>
+    
+    // 함수의 형태 4가지
+    // 1. 매개변수와 반환값이 모두 없는 함수
+    // 출력 값이 늘 동일함, 연산을 위한 변수가 모두 해당 함수 내에서 선언되고 사용됨
+    // function aaa1(){
+    //     var a=10;
+    //     var b=20;
+    //     console.log(a*b); - 결과값 출력 구문
+    // }
+    
+    // 2. 매개변수는 존재하고, 반환값이 없는 함수
+    // 매개변수로 인하여 출력값이 변동되고, 결과값을 외부로 돌려주어 해당 결과값을 다른 곳에서 활용할 수 있음
+        // function aaa2(a,b){
+        //     console.log(a*b) - 결과값 출력 구문
+        // }
+
+    // 3. 매개변수는 없고, 반환값이 존재하는 형태
+    // 출력값이 늘 동일함, 연산을 위한변수가 항상 함수 내에 존재하고, 반환값만 존재하는 형태.
+    //해당 함수를 실행 후 그 결과값을 다른곳에 활용하기 위해 사용
+            // function aaa3(){
+            //     var a= 10;
+            //     var b = 20;
+            //     return a*b; -결과값 반환 구문
+            // }
+
+    // 4. 매개변수와 반환값이 모두 있는 함수
+    //매개변수로 인하여 출력값이 변동되고 결과값을 함수를 호출한 시점으로 반환하여 그 결고값을 다른 소스에서 사용하도록 함
+    // function aaa4(a,b){
+    //     return a*b; 결과값 반환 구문
+    // }
+    // aaa4(10,20);
+
+    //문1) 사칙 연산을 매개변수와 반환값이 없는 형태로 함수를 생성하고 호출하여 화면에 출력하기
+        function q1(){
+            var a = 19;
+            var b = 29;
+            console.log("매개변수와 반환값이 모두 없는 함수 : ",a+b);
+            console.log("매개변수와 반환값이 모두 없는 함수 : ",a-b);
+            console.log("매개변수와 반환값이 모두 없는 함수 : ",a/b);
+            console.log("매개변수와 반환값이 모두 없는 함수 : "+a*b);
+        }
+        q1();
+
+    // 문2) 사칙연산을 매개변수o 반환값x 형태로 생성, 호출하여 화면에 출력
+        function q2(a,b){
+            console.log("매개변수 주고 반환값 안준 함수 : ",a*b);
+            console.log("매개변수 주고 반환값 안준 함수 : ",a+b);
+            console.log("매개변수 주고 반환값 안준 함수 : ",a-b);
+            console.log("매개변수 주고 반환값 안준 함수 : ",a/b);
+        }
+        q2(10,20);
+    // 문3) 사칙연산을 매개변수x 반환값o 형태로 생성, 호출하여 화면에 출력
+        function q3(){
+            var a= 10;
+            var b=20;
+            return a*b ;
+        }
+        function q31(){
+            var a= 10;
+            var b=20;
+            return a+b ;
+        }
+        function q32(){
+            var a= 10;
+            var b=20;
+            return a-b ;
+        }
+        function q33(){
+            var a= 10;
+            var b=20;
+            return a/b ;
+        }
+        console.log("매개변수안주고 반환값준 형태의 함수 : ",q3(),q31(),q32(),q33());
+    // 문4) 사칙연산을 매개변수o 반환값o 형태로 생성, 호출하여 화면에 출력
+        function q4(a,b){
+            return a*b;
+            var c = a*b;
+        }
+        function q41(a,b){
+            return a-b;
+        }
+        function q42(a,b){
+            return a+b;
+        }
+        function q43(a,b){
+            return a/b;
+        }
+        console.log("매개변수 주고 반환값 준 형태의 함수 : ",q4(10,20),q41(10,20),q42(10,20),q43(10,20));
+
+    // 문5) 사용자 입력 통해서 점수를 입력받고 해당 점수의 등급을 출력하는 프로그램을 작성
+    // 등급별 점수 5점차
+    function q5(){
+        var point = prompt("점수를 입력하세요");
+        point = Number(point);
+        if(point >= 95 && point <= 100){
+            console.log("당신의 점수 : ",point,"등급 : a+");
+        }
+        else if(point > 100 || point < 0 ){
+            var alr = "다시 입력하세요";
+            alert(alr);
+            q5();
+        }
+        else if(point < 95 && point >= 90){
+            console.log("당신의 점수 : ",point,"등급 : a");
+        }
+        else if (point <90 && point >= 85){
+            console.log("당신의 점수 : ",point,"등급 : b+");
+        }
+        else if (point < 85 && point >= 80){
+            console.log("당신의 점수 : ",point,"등급 : b");
+        }
+        else if (point <80 && point >= 75 ){
+            console.log("당신의 점수 : ",point,"등급 : c+");
+        }
+        else if (point < 75 && point >= 70){
+            console.log("당신의 점수 : ",point,"등급 : c");
+        }
+        else if (point <70 && point >= 65){
+            console.log("당신의 점수 : ",point,"등급 : d+");
+        }
+        else if (point <65 && point >=60){
+            console.log("당신의 점수 : ",point,"등급 : d");
+        }
+        else {
+            console.log("당신의 점수 : ",point,"등급 : f");
+        }
+    }
+    // q5();
+
+    // 전역변수 지역변수
+        // 프로그램 전체에서 사용되는 변수 = 전역변수
+        // 특정 코드블럭 내에서만 사용하는 변수 = 지역변수
+
+    // 문6) 사용자 입력을 통해서 원하는 단수의 구구단을 출력하는 프로그램을 작성
+    // 구구단 출력부분과 사용자 입력을 받는 부분을 따로따로 해야함
+    var potion=0;
+    function q6(){
+        var gugudan = prompt("단수를 입력하세요");
+        gugudan = Number(gugudan);
+        return gugudan; // - gugudan 에 저장된 데이터를 q6()을 선언한 변수에 저장시킬수 있음.
+    }
+    
+    function q61(b){
+        if (b >1 && b <10){
+            for (var a=1; a<10; a++){
+                console.log("입력한 단의 구구단 " , b*a);
+            }
+        }
+        else{
+            var d = "2이상 9이하의 숫자를 입력하시오"
+            alert(d);
+            q6();
+        }
+        }
+    // potion = q6(); // q6()가 실행되고 나서 return값을 받았기에 변수 potion 에 저장할수 있음.
+    // q61(potion);
+
+    console.log("------------------");
+    //문7) 화면출력함수를 생성하여 사용자가 입력한 숫자만큼 화면에 ' 안녕하세요 (카운트)' 를  띄우는 프로그램
+    //카운트는 1부터
+    // var count = prompt("숫자를 입력하세요");
+    // count=Number(count);
+    // q7(count); // 함수 실행부분
+    function q7(b){
+        for(i=1;i<=b;i++){
+            console.log("안녕하세요",i);
+        }
+    }
+
+    //문8) 랜덤 숫자를 사용하여 임의의 숫자 6개를 받아 배열에 입력 후 화면에 출력ㅎ는 프로그램
+    var rnd = Math.floor(Math.random()*45)+1;
+    var lotto = [];
+    for(i=1;i<=6;i++){
+        var rnd = Math.floor(Math.random()*45)+1;
+        lotto.push(rnd);
+    }
+    // console.log(lotto);
+    
+    //문9)문제 8번을 함수를 활용해서 코딩
+    var lotto2=[];
+    function q9(){
+        for(i=1;i<=6;i++){
+            var rnd = Math.floor(Math.random()*45)+1;
+            lotto2.push(rnd);
+        }
+        console.log(lotto2);
+    }
+    // q9();
+
+    //문10) 문제 9번을 이용해서 이번주 당첨번호를 생성 시 중복번호가 발생할 수 있음.
+    //여기서 중복번호를 제거하는 프로그램을 작성
+    var q10 = [];
+    var q_num = 0;
+    function createlotto(){
+        for(i=1 ; i<=6 ; i++){
+            var rnd = Math.floor(Math.random()*45)+1;
+            if(checklotto(rnd) == false){
+                // 추가된 숫자가 기존 배열에 없는 숫자일 때 추가된 숫자를 배열에 추가함
+                q10.push(rnd);
+            }
+            else{
+                //추가된 숫자가 기존 배열에 있는 숫자일 때 배열에 추가하지 않음(q10.push(rnd)가 없음)
+                i= i-1;
+            }
+        }
+        console.log(q10);
+    }
+
+    function printlotto(){
+
+    }
+
+    function checklotto(rnd){ 
+        var result = false; // 동일한 숫자가 잇는지에 대한 상태값
+        for(var i = 0; i < q10.length; i++){
+            if( rnd == q10[i]){
+                //뽑은 rnd값이 q10의 i번재 인덱스에 있는 숫자인지 아닌지 확인하는 법. for문과 if문을 씀
+                //true 를 반환하면 이미 있는 숫자 인것
+                return true;
+                break;
+            }
+        }
+        return result;
+    }
+    createlotto();
+    printlotto();
+    checklotto();
+    console.log("================");
+    //문11) 사용자 입력을 받아서 숫자가 짝인지 홀인지 화면에 출력하는 프로그램을 작성
+    
+    function q11f(){
+        var q11 = prompt("숫자를 입력하세요");
+        q11 = Number(q11);
+        return q11;
+    }
+
+    function checkq11(q11){
+        if(q11%2 == 0){
+            console.log("짝수");
+        }
+        else{
+            console.log("홀수");
+        }
+    }
+    var num = q11f();
+    checkq11(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
