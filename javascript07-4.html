@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <title>javascript 7일차 4번파일</title>
+
+    <script>
+        // dom 객체
+        // Document Object Model : 줄여서 DOM, 웹 문서의 모든 요소를 자바스크립트를 이용하여 조작할 수 있도록 객체를 사용하여 문서를 해석하는 방법
+        // dom 객체에 접근하기 위한 명령어
+        // dom 객체에 접근하려면 자바스크립트는 CSS 선택자를 사용함
+            // getElementById() : html의 id명을 사용하여 지정한 태그를 선택(아이디는 하나만 존재하기때문에 하나만 선택 가능) 
+            // getElementByClass() : html의 class명을 사용하여 지정한 태그를 선택(여러개 선택 가능)
+            // getElementByTagName() : html 고유의 태그네임을 사용하여 지정한 태그를 선택(여러개 선택 가능)
+            // querySelector() : id, class, 태그이름 을 사용하여 지정한 태그 선택(맨 처음 나오는 하나만 선택 가능)
+            // querySelectorAll() : 해당 id, class, 태그이름을 가진 모든 태그를 선택(여러개 선택 가능)
+
+        window.addEventListener("DOMContentLoaded", function(){
+            var btn01 = document.querySelector("#btn01");
+            var btn01State = true;
+
+            btn01.addEventListener("click", function(){
+                var hideH3 = document.querySelector("#hideH3");
+                var hideP = document.querySelector("#hideP");
+
+                if(btn01State == true){
+                    hideH3.style.visibility = "visible";
+                    hideP.style.visibility = "visible";
+                    btn01State = false;
+                    btn01.textContent = "숨기기";
+                }
+                else{
+                    hideH3.style.visibility = "hidden";
+                    hideP.style.visibility = "hidden";
+                    btn01State = true;
+                    btn01.textContent = "보이기";
+                }
+            }); 
+
+            //getElementById
+            //매게변수로 html 의 id명을 입력.(# 기호 제외)
+            //id만 검색하기에 id선택자 기호인 #이 필요없음
+            var heading = document.getElementById("heading");
+            heading.addEventListener("click", function(){
+                heading.style.fontSize = "40px";
+            });
+
+            //getElementByClass
+            //매개변수로 html의 class명을 입력.( .기호 제외)
+            //class만 검색하기에 class 선택자인 . 기호 필요없음
+            //class는 html에서 여러 태그가 동시에 사용할 수 있으므로 getElementByClassName을 사용시 반환값이 배열로 반환됨
+            var h3cls = document.getElementsByClassName("h3cls");
+            console.log(h3cls);
+            h3cls[0].style.textDecoration="underline";
+            h3cls[1].style.fontSize="30px";
+            h3cls[2].style.color="red";
+
+            //getElementbyTagName
+            //매개변수로 html의 id나 class 명이 없는 태그명을 입력
+            //getElementByClassName 처럼 반환값이 배열로 출력됨
+            var TagNames = document.getElementsByTagName("h2");
+            var TagNames2 = document.getElementsByTagName("span");
+            console.log(TagNames);
+            console.log(TagNames2);
+            TagNames[1].style.backgroundColor="#eeeeee";
+            TagNames2[0].style.
+            border = "3px solid red";
+
+            //querySelector()
+            //매개변수로 모든 이름 사용가능
+            //검색시 가장먼저 나오는 결과물 하나만 사용
+
+            //querySelectorAll()
+            //매개변수로 모든 이름 사용가능
+            //검색 한 결과물 모두를 사용
+            //결과값은 배열로 반환됨
+            var accent = document.querySelectorAll(".accent");
+            console.log(accent);
+            accent[0].style.fontSize = "24px";
+            accent[1].style.textDecoration = "underline";
+            accent[2].style.border = "2px solid blue";
+        });
+
+    </script>
+    <style>
+        #hideH3, #hideP{
+            visibility:hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="detail">
+        <h2>상품 정보</h2>
+        <ul>
+            <li>아메리카노</li>
+            <li>카페라떼</li>
+            <li>에스프레소</li>
+            <li>카푸치노</li>
+        </ul>
+
+        <h3 id="hideH3">설명 </h3>
+        <p id="hideP">너의 갑 것은 유소년에게서 이상의 밝은 불어 우리는 것이다. 하였으며, 위하여서 크고 능히 수 그들의 굳세게 봄바람이다. 이상 바로 인류의 피부가 교향악이다. 무한한 그림자는 오아이스도 들어 가치를 있는가? 되는 설산에서 사는가 그들은 가치를 어디 발휘하기 능히 피다.</p>
+        <button id="btn01"> 버튼 </button>
+
+        <br><hr><br>
+
+        <div id="div01">
+            <h1 id="heading"> getElementById로 선택할 태그 </h1>
+            <div id="div01_1">
+                <h3 class="h3cls">getElementByClass 로 선택할 태그</h3>
+                <p class="h3cls">블라블라블라블라블라블라</p>
+                <p class="h3cls">애옹애ㅗㅇ애오애오애오애오애오애옹</p>
+            </div>
+        </div>
+
+        <br><hr><br>
+
+        <div id="div02">
+            <h2>흠미</h2>
+            <span>흠흠흠흠흠흠흠흠흠흠흠흠흠흠흠</span>
+        </div>
+
+        <br><hr><br>
+
+        <h3>querySelectorAll</h3>
+        <p>이상 바로 인류의 피부가 교향악이다.<span class="accent"> 무한한 그림자는 오아이스도 들어 가치를 있는가?</span> 되는<span class="accent">설산</span>에서 <span class="accent">사는가</span> 그들은 가치를 어디 발휘하기 능히 피다.</p>
+    </div>
+</body>
+</html>
