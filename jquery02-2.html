@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 2일차 2번파일</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/jQuery02-2.js"></script>
+    <style>
+        #div01 > p, #div01 input{
+            font-size:32px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 문1) a 태그를 사용하여 링크를 생성하고 아래 버튼을 클릭시 링크와 해당 링크 설명글을 모두 변경하는 프로그램 -->
+    <!-- 3개의 링크 사용 -->
+    <div id="div01">
+        <p><a href="https://www.naver.com" id="div01link1" target="_blank">네이버 홈페이지</a></p>
+        <p><a href="https://www.daum.net" id="div01link2" target="_blank">다음 홈페이지</a></p>
+        <p><a href="https://www.nate.com" id="div01link3" target="_blank">네이트 홈페이지</a></p>
+        <button id="div01btn1">1번링크 변경</button>
+        <button id="div01btn2">2번링크 변경</button>
+        <button id="div01btn3">3번링크 변경</button>
+    </div>
+    <!-- 문2)a태그를 사용하여 링크를 생성하고 버튼을 클릭 시 링크와 설명글을 모두 변경하는 프로그램 작성-->
+    <!-- 각각의 링크 뒤에 input 태그를 사용하여 링크 주소와 설명글을 입력 -->
+    <div id="div01">
+        <p><a href="www.naver.com" id="div01link4">네이버 홈페이지</a></p>
+        <input type="text" id="div01input1">링크 주소 입력
+        <br>
+        <input type="text" id="div01input2">텍스트 입력
+        <button id="div01btn4">클릭 시 링크,텍스트 변경</button>
+    </div>
+</body>
+</html>
