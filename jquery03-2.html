@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 3일차 2번파일</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery.color.plus-names-2.1.2.js"></script>
+    <script src="./js/jQuery03-2.js"></script>
+    <link rel="stylesheet" href="./style/jQuery03-2.css" />
+</head>
+<body>
+    <h3>parent()함수</h3> 
+    <div id="div01">
+        <div>div (증조)
+            <ul>ul( 조부모 )
+                <li>li(부모)
+                    <span>span( 본 태그 )</span>
+                </li>
+            </ul>
+        </div>
+        <div>div (증조)
+            <p>p태그(부모 태그)
+                <span>(본 태그)(선택)</span>
+            </p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>parents() 함수</h3>
+    <div id="div02">고조
+        <div>증조
+            <ul>조부모
+                <li>부모
+                    <span>본(선택)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br><hr><br>
+    <h3> parentsUntil() 함수</h3>
+    <div id="div03">고조
+        <div>증조(선택)
+            <ul>조부모
+                <li>부모
+                    <span>본(선택)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <h3>후손태그 선택</h3>
+    <h3>children()함수의 괄호 안에 클래스명을 집어넣으면 그 클래스명을 가진 자손 태그를 찾을수도 있음.</h3>
+    <div id="div04">고조
+        <div>증조(선택)
+            <ul class="first">조부모(class명이 first)
+                <li>부모
+                    <span class="second"> 본 </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br><hr><br>
+    <h3>find()함수</h3>
+    <h3>find() 괄호안에 "*"을 넣으면 선택자 밑에 모든 태그들을 선택함.</h3>
+    <div id="div05">고조
+        <div>증조(선택)
+            <ul>조부모
+                <li>부모 2
+                    <span> 본2 (탐색 대상 : 탐색명 span)</span>
+                </li>
+                <li>부모
+                    <span> 본 (탐색 대상 : 탐색명 span) </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br><hr><br>
+    <h3>형제 태그 선택</h3>
+    <h3>siblings("p") = 형제 태그 중 p 태그 선택</h3>
+    <div id="div06">
+        <div id="div061">부모태그
+            <p> p 형제태그 1</p>
+            <span> span 형제태그 2</span>
+            <h2> h2 본 태그 (선택) </h2>
+            <h3> h3 형제태그</h3>
+            <p> p 형제태그 2</p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>next()</h3>
+    <div id="div07">
+        <div id="div071">부모태그
+            <p> p 형제태그 1</p>
+            <span> span 형제태그 2</span>
+            <h2> h2 본 태그 (선택) </h2>
+            <h3> h3 형제태그</h3>
+            <p> p 형제태그 2 </p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>nextAll()</h3>
+    <div id="div08">
+        <div id="div081">부모태그
+            <p> p 형제태그 1</p>
+            <span style="font-weight:bold; font-size:24px;"> span 형제태그 2 (선택)</span>
+            <h2> h2 본 태그  </h2>
+            <h3> h3 형제태그</h3>
+            <p> p 형제태그 2</p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>nextUntil()</h3>
+    <div id="div09">
+        <div id="div091">부모태그
+            <p> p 형제태그 1</p>
+            <span> span 형제태그 2 </span>
+            <h2> h2 본 태그 (선택 1) </h2>
+            <h3> h3 형제태그</h3>
+            <h4> h4 형제태그</h4>
+            <h5> h5 형제태그</h5>
+            <h6> h6 형제태그 (선택 2) </h6>
+            <p> p 형제태그 2</p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>prev()</h3>
+    <div id="div10">
+        <div id="div101">부모태그
+            <p> p 형제태그 1</p>
+            <span> span 형제태그 2 </span>
+            <h2> h2 본 태그 (선택) </h2>
+            <h3> h3 형제태그</h3>
+            <h4> h4 형제태그</h4>
+            <h5> h5 형제태그</h5>
+            <h6> h6 형제태그</h6>
+            <p> p 형제태그 2</p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>prevAll()</h3>
+    <div id="div11">
+        <div id="div111">부모태그
+            <p> p 형제태그 1</p>
+            <span> span 형제태그 2 </span>
+            <h2> h2 본 태그 (선택) </h2>
+            <h3> h3 형제태그</h3>
+            <h4> h4 형제태그</h4>
+            <h5> h5 형제태그</h5>
+            <h6> h6 형제태그</h6>
+            <p> p 형제태그 2</p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>prevUntil()</h3>
+    <h3>prev()는 그 태그 이전의 태그를 찾는것이므로 prevUntil 에서 선 기준점이 되는 태그를 HTML태그상 아랫줄에 있는 태그를 먼저 기점으로 잡아야 Until을 제대로 적용할 수 있음</h3>
+    <div id="div12">
+        <div id="div121">부모태그
+            <p> p 형제태그 1</p>
+            <span> span 형제태그 2 </span>
+            <h2> h2 본 태그 (선택 2) </h2>
+            <h3> h3 형제태그</h3>
+            <h4> h4 형제태그</h4>
+            <h5> h5 형제태그</h5>
+            <h6> h6 형제태그 (선택 1) </h6>
+            <p> p 형제태그 2</p>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,7 @@
+#div01 *, #div02 *, #div02, #div03 *, #div03, #div04 *, #div04, #div05 *, #div05, #div06 *, #div06, #div07 *, #div07, #div08 *, #div08, #div09 *, #div09, #div10 *, #div10, #div11 *, #div11, #div12 *, #div12 {
+    display:block;
+    border: 2px solid black;
+    color : gray;
+    padding : 10px;
+    margin: 20px;
+}

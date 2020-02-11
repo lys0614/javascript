@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 3일차 3번파일</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery.color.plus-names-2.1.2.js"></script>
+    <script src="./js/jQuery03-3.js"></script>
+    <link rel="stylesheet" href="./style/jQuery03-3.css" />
+</head>
+<body>
+    <h3>제이쿼리를 이용한 트래버싱(필터링)</h3>
+    <br><hr><br>
+    <h3>first()</h3>
+    <h3>같은 이름의 태그 중에 가장 먼저 나온 태그 선택</h3>
+    <hr>
+    <div id="div01">
+        <h1>여러가지 태그 중 첫번째 h1 태그</h1>
+        <p>화면에 출력될 p 태그</p>
+        <div>
+            <p> 선택할 p 태그 </p>
+            <p>선택할 p 태그 2번째</p>
+        </div>
+        <br>
+        <div>
+            <p> 선택 되지 않을 첫번째 태그인 p 태그  </p>
+            <p> 선택 되지 않을 두번째 태그인 p 태그</p>
+        </div>
+        <br>
+        <div>
+            <p> 선택 되지 않을 세번째 태그인 p 태그  </p>
+            <p> 선택 되지 않을 네번째 태그인 p 태그</p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>last()</h3>
+    <h3>같은 이름의 태그 중에 제일 마지막 태그 선택</h3>
+    <hr>
+    <div id="div02">
+        <h1>여러가지 태그 중 첫번째 h1 태그</h1>
+        <p>화면에 출력될 p 태그</p>
+        <div>
+            <p> 선택할 p 태그 </p>
+            <p>선택할 p 태그 2번째</p>
+        </div>
+        <br>
+        <div>
+            <p> 선택 되지 않을 첫번째 태그인 p 태그  </p>
+            <p> 선택 되지 않을 두번째 태그인 p 태그</p>
+        </div>
+        <br>
+        <div>
+            <p> 선택 되지 않을 세번째 태그인 p 태그  </p>
+            <p> 선택 되지 않을 네번째 태그인 p 태그</p>
+        </div>
+    </div>
+    <br><hr><br>
+    <h3>eq() -> 같은 태그 중에 특정 순서에 위치한 태그를 선택</h3>
+    <hr>
+    <div id="div03">
+        <p>no.1 p tag</p>
+        <p>no.2 p tag</p>
+        <p>no.3 p tag</p>
+        <p>no.4 p tag</p>
+    </div>
+    <br><hr><br>
+    <h3>filter()</h3>
+    <h3>지정한 조건을 만족하면 선택 -> 조건 : class="p1"</h3>
+    <hr>
+    <div id="div04">
+        <p class="p1">1 p tag</p>
+        <p class="p2">2 p tag</p>
+        <p class="p1">1 p tag</p>
+        <p class="p4">4 p tag</p>
+    </div>
+    <br><hr><br>
+    <h3>not()</h3>
+    <h3>지정한 조건을 제외하고 선택 -> 조건 : class="p1"</h3>
+    <hr>
+    <div id="div05">
+        <p class="p1">1 p tag</p>
+        <p class="p2">2 p tag</p>
+        <p class="p1">1 p tag</p>
+        <p class="p4">4 p tag</p>
+    </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

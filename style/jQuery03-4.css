@@ -1,0 +1,15 @@
+table{
+    border:1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse : collapse;
+    width:100%;
+}
+td,th{
+    border:1px solid pink;
+    text-align: left;
+    padding:10px;
+}
+tr:nth-child(even){
+    /* 짝수줄 선택자 */
+    background-color: pink;
+}
