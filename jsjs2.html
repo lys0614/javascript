@@ -1,0 +1,187 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery.color.plus-names-2.1.2.js"></script> -->
+    <title>js복습2</title>
+    <script>
+        // var menu1 = {"이름" : "쉬림프포테이토버거", "1회제공량":"280g", "칼로리":"680kcal", "당류" : "12g", "포화지방" :"6(40g)", "단백질":"33(60g)","세트중량" :"680g", "세트칼로리":"1130kcal"};
+        // var menu2 = {"이름":"휠렛포테이토버거", "1회제공량":"232g", "칼로리" : "737kcal", "나트륨":"737","당류":"8g","포화지방":"5(33g)","단백질":"15(27g)","세트중량":"632g","세트칼로리":"994kcal"};
+        // var menu3 = {"이름":"불고기포테이토버거", "1회제공량":"268g", "칼로리":"678kcal", "나트륨":"915", "당류":"13g", "포화지방":"11(73g)", "단백질":"26(47g)", "세트중량":"668g", "세트칼로리":"1128kcal"}
+        // console.log(menu1);
+        // var a = new Array();
+        // a.push(menu1);
+        // a.push(menu2);
+        // a.push(menu3);
+        // console.log(a);
+        // console.log("-------------------------");
+        // //for in문은 배열or객체형 변수에 내재되어있는 자료들을 열거하는데 사용함.
+        // for(var i=0;i<a.length;i++){
+        //     for(var x in a[i]){
+        //         console.log(a[i][x]);
+        //     }
+        // }
+    
+    // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+        //함수유형번호 반환값 매개변수
+        //1번 x x
+        //2번 x o
+        //3번 o x
+        //4번 o o
+
+        // var ob1 = {"이름": "드라군", "필요기술": "사이버네틱스 코어", "인구수" : "2"};
+        // var ob2 = {"이름": "다크템플러","필요기술": "템플러 아카이브", "인구수": "2"};
+        // var ob3 = {"이름": "저글링", "필요기술": "스포닝 풀", "인구수": "1"};
+        // var ob4 = {"이름": "셔틀", "필요기술": "없음", "인구수": "2"}
+        // var t = "";
+        // var star = "";
+
+        // function datago1(){
+        //     for(var x in ob1){
+        //         console.log(x + " : " + ob1[x]);
+        //     }
+        // }
+
+        // function datago2(name){
+        //     for(var x in name){
+        //         console.log(x + " : " + name[x]);
+        //     }
+        // }
+
+        // function datago3(){
+        //     for(var x in ob3){
+        //         t += x + " : " + ob3[x] + " / ";
+        //     }
+        //     return t;
+        // }
+
+        // function datago4(sc){
+        //     for(var x in sc){
+        //         star += x + " : " + sc[x] + " / ";
+        //     }
+        //     return star;
+        // }
+        // datago1();
+        // datago2(ob2);
+        // console.log(datago3());
+        // console.log(datago4(ob4));
+    // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+        // var dan = prompt("구구단 단수 : ");
+        // var point = prompt("당신의 점수 : ");
+     
+        // var dan = "";
+        // var point = "";    
+
+        //     function input1(){
+        //         var input = document.getElementById("input1").value;
+        //         dan = input;
+        //         console.log(gogodan2(dan));
+        //     }
+        //     // 단수 입력받는 함수
+        //     function input2(){
+        //         var input = document.getElementById("input2").value;
+        //         point = input;
+        //         console.log(grade(point));
+        //     }
+        //     // 점수 입력받는 함수
+        //     function hap(){
+        //         var hp = 0
+        //         for(var i =1; i<=10; i++){
+        //             hp += i;
+        //         }
+        //         return hp;
+        //     }
+        //     //1부터 10까지 합 도출하는 함수 (문1)
+        //     function gogodan(){
+        //         var gd = "";
+        //         for(var i = 2; i<=9; i++){
+        //             for(var j =1; j<=9; j++){
+        //                 gd += "구구단 " + i + " 단 : " + i +" * " + j + " = " + (i*j) + "\n";
+        //             }
+        //             gd+="\n";
+        //         }
+        //         return gd;
+        //     }
+        //     //구구단 2단부터 9단까지 도출하는 함수 (문2)
+        //     function gogodan2(dan){
+        //         var ggd = "";
+        //             for(var i = 1; i <= 9; i++){
+        //                 ggd+=("구구단 : " + dan +" * " +  i + " = " + (dan*i) + "\n");
+        //                 }
+        //         return ggd;
+        //         }
+                
+
+        //     function grade(point){
+        //     var jumsoo = "";
+        //         if(point >=90){
+        //             jumsoo += "당신의 점수 : " + point + "점 / " + "학점은 A학점";
+        //         }
+        //         else if(point >= 80){
+        //             jumsoo += "당신의 점수 : " + point + "점 / " + "학점은 B학점";
+        //         }
+        //         else if(point >= 70){
+        //             jumsoo += "당신의 점수 : " + point + "점 / " + "학점은 C학점";
+        //         }
+        //         else if(point >= 60){
+        //             jumsoo += "당신의 점수 : " + point + "점 / " + "학점은 D학점";
+        //         }
+        //         else {
+        //             jumsoo += "당신의 점수 : " + point + "점 / " + "학점은 F학점";
+        //         }
+        //         return jumsoo;
+        //     }
+        //     console.log("1부터 10까지의 합 : "+hap());
+        //     console.log(gogodan());
+        //     // console.log(gogodan(dan)+"\n");
+        //     // console.log(grade(point));
+    
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // var first = prompt("첫번째 수를 입력하세요");
+    // first = Number(first);
+    // var second = prompt("두번째 수를 입력하세요");
+    // second = Number(second);
+    // function run(a,b){
+    //     var runs = 0;
+    //     if(a < b){
+    //         for(var i = a; i <=b; i++){
+    //             runs+=i;
+    //         }
+    //     }
+    //     else{
+    //         for(var i = b ; i <= a ; i ++){
+    //             runs+=i;
+    //         }
+    //     }
+        
+    //     console.log(first + " 부터 " + second + " 까지의 합 : "+ runs);
+    // }
+    // run(first, second);
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    var dan="";
+    function input1(){
+        var input = document.getElementById("input1").value;
+        dan = input;
+        gugudan(dan);
+    }
+    function gugudan(dan){
+        var ggd = "";
+        for(var i = 1; i <=9 ; i++){
+            ggd += "구구단 " + dan +" 단 : " + dan + " * " + i + " = " + (dan*i) + "\n";
+        }
+        console.log(ggd);
+    }
+    </script>
+</head>
+<body>
+    <!-- <input type="text" id="input1"> <br>
+    <input type="text" id="input2"> <br>
+    <button onclick="input1()">클릭 시 입력한 단수로 구구단 출력</button>
+    <button onclick="input2()">클릭시 점수에 따른 학점 출력</button>
+    <div id="div01"></div> -->
+    <input type="text" id="input1"> <br>
+    <button onclick="input1()">클릭 시 입력한 단 수 구구단 출력</button>
+</body>
+</html> 
